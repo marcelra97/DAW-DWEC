@@ -11,7 +11,100 @@
 
 <script type="text/javascript">
 
-    var numeros
+   /* //EJERCICIO 1
+
+    //creo un entero que se guarda el tamaño del array
+    var tamañoarray = prompt("Tamaño del array");
+
+    //me creo un array
+    var patata = new Array;
+
+    //hago un for que recorre el array
+    for(let i = 0; i < tamañoarray; i++){
+
+        //pido los numero dentro del array 
+        let numero = prompt("Dime el numero entero");
+        
+        //y lo meto dentro del nuevo array
+        patata.push(numero);
+
+    }
+    //me enseña el maximo del array
+    alert(Math.max.apply(null,patata))
+*/
+
+
+    //EJERCICIO 3
+    var dni = prompt("Pon un Dni");
+
+    var correo = prompt("Pon un correo");
+
+    var telefono = prompt("Pon un telefono");
+
+    var ip = prompt("Pon una ip");
+
+    var url = prompt("Pon una url");
+
+    var letraDni = ["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"]
+
+    var validarDNi = /^[a-zA-Z0-9]{5,10}$/;
+    var validarCorreo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    var validarTelefono = /^([0-9]{5})+(-)+([0-9]{6})$/i;
+    var validarIp = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    var validarUrl = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
+
+
+    //comprobar el dni
+   if(validarDNi.test(dni) == true){
+      
+      document.write("DNI validado <br>");
+
+   }else{
+
+       document.write("Su dni no es valido <br>");
+   }
+
+   //Comprobar Correo
+   if(validarCorreo.test(correo) == true){
+      
+      document.write("Correo validado <br>");
+
+   }else{
+
+       document.write("Su correo electronico no es valido <br>");
+   }
+
+   //Comprobar telefono
+   if(validarTelefono.test(telefono) == true){
+      
+      document.write("Telefono validado <br>");
+
+   }else{
+
+       document.write("Su telefono no es valido <br>");
+   }
+
+   //Comprobar IP
+   if(validarIp.test(ip) == true){
+      
+      document.write("IP validado <br>");
+
+   }else{
+
+       document.write("Su ip no es valido <br>");
+   }
+    
+    //Comprobar URL
+   if(validarUrl.test(url) == true){
+      
+      document.write("URL validado <br>");
+
+   }else{
+
+       document.write("Su URL no es valido <br>");
+   }
+
+
 </script>
 
 </body>
