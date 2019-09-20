@@ -33,7 +33,7 @@
     alert(Math.max.apply(null,patata))
 */
 
-
+/*
     //EJERCICIO 3
     var dni = prompt("Pon un Dni");
 
@@ -49,7 +49,7 @@
 
     var validarDNi = /^[a-zA-Z0-9]{5,10}$/;
     var validarCorreo = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    var validarTelefono = /^([0-9]{5})+(-)+([0-9]{6})$/i;
+    var validarTelefono = /^(\+34|0034|34)?[\s|\-|\.]?[6|7|8|9][\s|\-|\.]?([0-9][\s|\-|\.]?){8}$/;
     var validarIp = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
     var validarUrl = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
 
@@ -103,6 +103,99 @@
 
        document.write("Su URL no es valido <br>");
    }
+
+
+*/
+//EJERCICO 4
+/*
+var fecha = new Date();
+var argumento ="01/02/97";
+
+
+function esDate(Date) {
+    
+    if(fecha === comprobar){
+
+        return("Es un date");
+
+    }else{
+
+        return("No es un date");
+
+    }
+
+
+}
+var resultado = esDate(fecha);
+var resultado2 = esDate(argumento);
+console.log(resultado);
+console.log(resultado2);
+*/
+
+//EJERCICIO 5
+/*
+var mes = prompt("Indique el mes");
+
+var año = prompt("Indique el año");
+
+// devuelve los dias que tiene el mes y del año que le indiques
+function obtenerDias(mes, año) {
+    
+var fecha = new Date(año, mes, 0);
+
+return fecha.getDate();
+
+
+}
+
+
+var resultado = obtenerDias(mes, año);
+
+console.log("El mes " + mes + " del " + año + " tiene: " + resultado + " dias");
+*/
+
+//EJERCICIO 6
+
+var fecha = prompt("Indique la fecha");
+
+var meses = ["","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+
+function nombreMes(fecha) {
+    
+    var resultado = fecha.substring(3,5); 
+    var comprobar = resultado.substring(0,1);
+
+    //un if para saber si es un mes que empieza por 0 o 1
+    if( comprobar == 0 ){
+        
+        //coge el numero del mes
+        let numero = resultado.substring(1,2);
+        
+        
+
+        /*for(let i = 0; i = resultado; i++){
+    
+        console.log(meses[i]);
+
+
+        } */  
+
+    }else{
+
+
+
+    }
+
+
+
+
+
+}
+
+var final = (nombreMes(fecha));
+
+console.log(final);
 
 
 </script>
