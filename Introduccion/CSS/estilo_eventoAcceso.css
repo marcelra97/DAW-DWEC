@@ -5,8 +5,9 @@ h2 {
 
 
 form {
-    background-color: grey;
-    width: 50%;
+    background-color: lightgray;
+    width: 45%;
+    height: 45%;
     border: 1px solid black;
     text-align: right;
 }

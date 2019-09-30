@@ -13,7 +13,163 @@
     </style>
 
     <script>
-    
+        
+        //Array para comprobar que todo el formulario esta escrito correctamente
+        var comprobacionGlobal = new Array;
+
+        function comprobarNombre(nombre){
+
+            var comprobarNombre = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
+
+            // se comprueba que el nombre sea valido
+            if(comprobarNombre.test(nombre.value)){
+                //no es error
+                comprobacionGlobal.push = true;
+
+            }else{
+                
+                //es error
+                comprobacionGlobal.push = false;
+
+            }
+
+
+        }
+
+        function comprobarApellidos(apellidos){
+
+            var comprobarApellidos = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
+
+            if(comprobarApellidos.test(apellidos.value)){
+                //no es error
+                comprobarGlobal.push = true;
+
+            }else{
+                // es erro
+                comprobarGlobal.push = false;
+
+            }
+
+
+        }
+
+        function comprobarEmail(email){
+
+            var comprobarEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+
+            if(comprobarEmail.test(email.value)){
+
+                //no es erro
+                comprobarGlobal.push = true;
+
+            }else{
+
+                //es error
+                comprobarGlobal.push = false;
+
+            }
+
+
+        }
+
+        function comprobarDNI(dni){
+
+            var comprobarDNI = /^[a-zA-Z0-9]{5,10}$/;
+
+            if(comprobarDNI.test(dni.value)){
+
+                //no es error
+                comprobacionGlobal.push = true;
+
+            }else{
+
+                //es error
+                comprobacionGlobal.push = false;
+
+            }
+
+
+
+        }
+
+        function comprobarPassword(password){
+
+            //minimo 8 caracteres
+            //maximo 15 caracteres
+            //una letra mayuscula
+            //una letra minuscula
+            //al menos un digito
+            //no hay espacios en blanco
+            //al menos un caracter especial
+
+            var comprobarPassword =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+
+            if(comprobarPassword.test(password.value)){
+                
+                //no es error
+                comprobarGlobal.push = true;
+
+            }else{
+
+                //es error 
+                comprobacionGlobal.push = false;
+
+            }
+
+        }
+
+        //comprobar que la password es igual
+        function passwordCorrecta(passwordRepetida, password){
+
+            if(password == passwordRepetida){
+
+                comprobarGlobal.push = true;
+
+            }else{
+
+                comprobarGlobal.push = false;
+            }
+
+        }
+
+        function comprobarIp(ip){
+
+            var comprobarIp = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+            
+            if(comprobarIp.test(ip.value)){
+
+                //no es error
+                comprobacionGlobal.push = true;
+
+            }else{
+
+                //es error
+                comprobacionGlobal.push = false;
+
+            }
+
+        }
+
+        //validar el formulario al darle enviar
+        function validarFormulario(){
+
+            console.log(comprobacionGlobal);
+
+            for(let i = 0; i < comprobarGlobal.length; i++ ){
+
+                if(comprobarGlobal[i] == false ){
+
+                    alert("El formulario tiene errores");
+
+                }else{
+
+                    alert("El formulario no tiene errores");
+
+                }
+
+            }
+
+        }
     
     </script>
 
@@ -28,28 +184,28 @@
         <h2>Formulario Total</h2>
         
         <label>Nombre:</label>
-        <input type="text" size="70"><br>    
+        <input type="text" name="nombre" size="70" onblur="comprobarNombre(this)"><br>    
 
         <label>Apellidos:</label>    
-        <input type="text" size="70"><br>    
+        <input type="text" name="apellidos" size="70" onblur="comprobarApellidos(this)"><br>    
 
         <label>e-mail:</label>    
-        <input type="text" size="70"><br>
+        <input type="text" name="email" size="70" onblur="comprobarEmail(this)"><br>
     
         <label>DNI:</label>
-        <input type="text" size="70"><br>
+        <input type="text" name="dni" size="70" onblur="comprobarDNI(this)"><br>
     
         <label>Password:</label>
-        <input type="password" size="70"><br>
+        <input type="password" name="password" size="70" onblur="comprobarPassword(this)"><br>
     
         <label>Repetir Password:</label>
-        <input type="password" size="70"><br>
+        <input type="password" name="passwordRepetida" size="70" onblur="passwordCorrecta(this,password)" ><br>
 
         <label>IP Equipo</label>    
-        <input type="text" size="70"><br>
+        <input type="text" name="ip" size="70" onblur="comprobarIp(this)"><br>
 
 
-        <button >Enviar</button>    
+        <button onclick="validarFormulario">Enviar</button>    
 
     </form>
     
