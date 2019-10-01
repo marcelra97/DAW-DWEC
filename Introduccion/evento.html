@@ -15,7 +15,8 @@
     <script>
         
         //Array para comprobar que todo el formulario esta escrito correctamente
-        var comprobacionGlobal = new Array;
+        var comprobarFormulario = new Array;
+       
 
         function comprobarNombre(nombre){
 
@@ -24,14 +25,16 @@
             // se comprueba que el nombre sea valido
             if(comprobarNombre.test(nombre.value)){
                 //no es error
-                comprobacionGlobal.push = true;
+                comprobarFormulario[0] = true;
 
             }else{
                 
                 //es error
-                comprobacionGlobal.push = false;
+                comprobarFormulario[0] = false;
 
             }
+
+            console.log(comprobarFormulario);
 
 
         }
@@ -42,14 +45,14 @@
 
             if(comprobarApellidos.test(apellidos.value)){
                 //no es error
-                comprobarGlobal.push = true;
+                comprobarFormulario[1] = true;
 
             }else{
-                // es erro
-                comprobarGlobal.push = false;
+                // es error
+                comprobarFormulario[1] = false;
 
             }
-
+            console.log(comprobarFormulario);
 
         }
 
@@ -60,34 +63,34 @@
             if(comprobarEmail.test(email.value)){
 
                 //no es erro
-                comprobarGlobal.push = true;
+                comprobarFormulario[2] = true;
 
             }else{
 
                 //es error
-                comprobarGlobal.push = false;
+                comprobarFormulario[2] = false;
 
             }
-
+            console.log(comprobarFormulario);
 
         }
 
         function comprobarDNI(dni){
 
-            var comprobarDNI = /^[a-zA-Z0-9]{5,10}$/;
+            var comprobarDNI =  /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/i;
 
             if(comprobarDNI.test(dni.value)){
 
                 //no es error
-                comprobacionGlobal.push = true;
+                comprobarFormulario[3] = true;
 
             }else{
 
                 //es error
-                comprobacionGlobal.push = false;
+                comprobarFormulario[3] = false;
 
             }
-
+            console.log(comprobarFormulario);
 
 
         }
@@ -105,69 +108,84 @@
             var comprobarPassword =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
 
             if(comprobarPassword.test(password.value)){
-                
+               
                 //no es error
-                comprobarGlobal.push = true;
+                comprobarFormulario[4] = true;
 
             }else{
 
                 //es error 
-                comprobacionGlobal.push = false;
+                comprobarFormulario[4] = false;
 
             }
+
+            console.log(comprobarFormulario);
 
         }
 
         //comprobar que la password es igual
         function passwordCorrecta(passwordRepetida, password){
 
-            if(password == passwordRepetida){
+            
+            if(password == passwordRepetida.value){
 
-                comprobarGlobal.push = true;
+                comprobarFormulario[5] = true;
 
             }else{
-
-                comprobarGlobal.push = false;
+                
+                comprobarFormulario[5] = false;
             }
+
+            console.log(comprobarFormulario);
 
         }
 
         function comprobarIp(ip){
 
-            var comprobarIp = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+            var comprobarIp = /^([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3})$/;
             
             if(comprobarIp.test(ip.value)){
 
                 //no es error
-                comprobacionGlobal.push = true;
+                comprobarFormulario[6] = true;
 
             }else{
 
                 //es error
-                comprobacionGlobal.push = false;
+                comprobarFormulario[6] = false;
 
             }
-
+            console.log(comprobarFormulario);
         }
 
         //validar el formulario al darle enviar
         function validarFormulario(){
+            
+            
+            var comprobarCorrecto = 0;
+            var i = 0;
 
-            console.log(comprobacionGlobal);
+                while(comprobarFormulario[i] == true && i<=7 ){
 
-            for(let i = 0; i < comprobarGlobal.length; i++ ){
+                    i++;
+                    comprobarCorrecto++;
 
-                if(comprobarGlobal[i] == false ){
+                }    
 
-                    alert("El formulario tiene errores");
+                console.log(comprobarCorrecto);
+
+                if(comprobarCorrecto == 7 ){
+
+                    alert("Se han introducido todos los datos correctamente");
 
                 }else{
 
-                    alert("El formulario no tiene errores");
+                    alert("Error");
+                    
 
                 }
 
-            }
+            
 
         }
     
@@ -199,13 +217,13 @@
         <input type="password" name="password" size="70" onblur="comprobarPassword(this)"><br>
     
         <label>Repetir Password:</label>
-        <input type="password" name="passwordRepetida" size="70" onblur="passwordCorrecta(this,password)" ><br>
+        <input type="password" name="passwordRepetida" size="70" onblur="passwordCorrecta(this, password.value)" ><br>
 
         <label>IP Equipo</label>    
         <input type="text" name="ip" size="70" onblur="comprobarIp(this)"><br>
 
 
-        <button onclick="validarFormulario">Enviar</button>    
+        <button onclick="validarFormulario()">Enviar</button>    
 
     </form>
     
