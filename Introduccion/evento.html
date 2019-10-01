@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +8,29 @@
     <title>Entrada de acceso </title>
 
     <style>
-
-    @import "CSS/estilo_eventoAcceso.css";
-
+        @import "CSS/estilo_eventoAcceso.css";
     </style>
 
     <script>
-        
         //Array para comprobar que todo el formulario esta escrito correctamente
         var comprobarFormulario = new Array;
-       
 
-        function comprobarNombre(nombre){
+
+        function comprobarNombre(nombre) {
 
             var comprobarNombre = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
 
             // se comprueba que el nombre sea valido
-            if(comprobarNombre.test(nombre.value)){
+            if (comprobarNombre.test(nombre.value)) {
                 //no es error
                 comprobarFormulario[0] = true;
 
-            }else{
-                
+
+            } else {
+
                 //es error
                 comprobarFormulario[0] = false;
-
+                nombre.value = "Error";
             }
 
             console.log(comprobarFormulario);
@@ -39,63 +38,64 @@
 
         }
 
-        function comprobarApellidos(apellidos){
+        function comprobarApellidos(apellidos) {
 
             var comprobarApellidos = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
 
-            if(comprobarApellidos.test(apellidos.value)){
+            if (comprobarApellidos.test(apellidos.value)) {
                 //no es error
                 comprobarFormulario[1] = true;
 
-            }else{
+            } else {
                 // es error
                 comprobarFormulario[1] = false;
-
+                apellidos.value = "Error";
             }
             console.log(comprobarFormulario);
 
         }
 
-        function comprobarEmail(email){
+        function comprobarEmail(email) {
 
             var comprobarEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
-            if(comprobarEmail.test(email.value)){
+            if (comprobarEmail.test(email.value)) {
 
                 //no es erro
                 comprobarFormulario[2] = true;
 
-            }else{
+            } else {
 
                 //es error
                 comprobarFormulario[2] = false;
+                email.value = "Error";
 
             }
             console.log(comprobarFormulario);
 
         }
 
-        function comprobarDNI(dni){
+        function comprobarDNI(dni) {
 
-            var comprobarDNI =  /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/i;
+            var comprobarDNI = /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/i;
 
-            if(comprobarDNI.test(dni.value)){
+            if (comprobarDNI.test(dni.value)) {
 
                 //no es error
                 comprobarFormulario[3] = true;
 
-            }else{
+            } else {
 
                 //es error
                 comprobarFormulario[3] = false;
-
+                dni.value = "Error";
             }
             console.log(comprobarFormulario);
 
 
         }
 
-        function comprobarPassword(password){
+        function comprobarPassword(password) {
 
             //minimo 8 caracteres
             //maximo 15 caracteres
@@ -105,17 +105,18 @@
             //no hay espacios en blanco
             //al menos un caracter especial
 
-            var comprobarPassword =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+            var comprobarPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
 
-            if(comprobarPassword.test(password.value)){
-               
+            if (comprobarPassword.test(password.value)) {
+
                 //no es error
                 comprobarFormulario[4] = true;
 
-            }else{
+            } else {
 
                 //es error 
                 comprobarFormulario[4] = false;
+                password.value = "Error";
 
             }
 
@@ -124,112 +125,124 @@
         }
 
         //comprobar que la password es igual
-        function passwordCorrecta(passwordRepetida, password){
+        function passwordCorrecta(passwordRepetida, password) {
 
-            
-            if(password == passwordRepetida.value){
+
+            if (password == passwordRepetida.value) {
 
                 comprobarFormulario[5] = true;
 
-            }else{
-                
+            } else {
+
                 comprobarFormulario[5] = false;
+                passwordRepetida.value = "Error";
             }
 
             console.log(comprobarFormulario);
 
         }
 
-        function comprobarIp(ip){
+        function comprobarIp(ip) {
 
             var comprobarIp = /^([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3})$/;
-            
-            if(comprobarIp.test(ip.value)){
+
+            if (comprobarIp.test(ip.value)) {
 
                 //no es error
                 comprobarFormulario[6] = true;
 
-            }else{
+            } else {
 
                 //es error
                 comprobarFormulario[6] = false;
+                ip.value = "Error";
 
             }
             console.log(comprobarFormulario);
         }
 
-        //validar el formulario al darle enviar
-        function validarFormulario(){
-            
-            
+        //validar el formulario al darle enviarswor
+        function validarFormulario() {
+
             var comprobarCorrecto = 0;
             var i = 0;
 
-                while(comprobarFormulario[i] == true && i<=7 ){
+            while (comprobarFormulario[i] == true && i <= 7) {
 
-                    i++;
-                    comprobarCorrecto++;
+                i++;
+                comprobarCorrecto++;
 
-                }    
+            }
 
-                console.log(comprobarCorrecto);
+            console.log(comprobarCorrecto);
 
-                if(comprobarCorrecto == 7 ){
+            if (comprobarCorrecto == 7) {
 
-                    alert("Se han introducido todos los datos correctamente");
+                alert("Se han introducido todos los datos correctamente");
 
-                }else{
+            } else {
 
-                    alert("Error");
-                    
+                if (comprobarFormulario[5] == false) {
+
+                    alert("La contraseña no es igual. Recuerda que en la contraseña tienes que poner 8 caracteres como minimo. 15 como maximo. Una letra mayuscula. Una letra minuscula. Al menos un numero. Sin espacios y con un caracter especial ");
+
+                } else {
+
+                    alert("Error !!!");
 
                 }
 
-            
+
+
+
+            }
+
+
 
         }
-    
     </script>
 
 </head>
+
 <body>
 
-    
-    
+
+
 
     <form>
 
         <h2>Formulario Total</h2>
-        
+
         <label>Nombre:</label>
-        <input type="text" name="nombre" size="70" onblur="comprobarNombre(this)"><br>    
+        <input type="text" name="nombre" size="70" onblur="comprobarNombre(this)"><br>
 
-        <label>Apellidos:</label>    
-        <input type="text" name="apellidos" size="70" onblur="comprobarApellidos(this)"><br>    
+        <label>Apellidos:</label>
+        <input type="text" name="apellidos" size="70" onblur="comprobarApellidos(this)"><br>
 
-        <label>e-mail:</label>    
+        <label>e-mail:</label>
         <input type="text" name="email" size="70" onblur="comprobarEmail(this)"><br>
-    
+
         <label>DNI:</label>
         <input type="text" name="dni" size="70" onblur="comprobarDNI(this)"><br>
-    
+
         <label>Password:</label>
         <input type="password" name="password" size="70" onblur="comprobarPassword(this)"><br>
-    
-        <label>Repetir Password:</label>
-        <input type="password" name="passwordRepetida" size="70" onblur="passwordCorrecta(this, password.value)" ><br>
 
-        <label>IP Equipo</label>    
+        <label>Repetir Password:</label>
+        <input type="password" name="passwordRepetida" size="70" onblur="passwordCorrecta(this, password.value)"><br>
+
+        <label>IP Equipo:</label>
         <input type="text" name="ip" size="70" onblur="comprobarIp(this)"><br>
 
 
-        <button onclick="validarFormulario()">Enviar</button>    
+        <button onclick="validarFormulario()">Enviar</button>
 
     </form>
-    
-    
-   
-   
+
+
+
+
 
 </body>
+
 </html>
