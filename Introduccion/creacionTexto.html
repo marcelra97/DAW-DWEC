@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        #izquierda {
+            float: left;
+            border: 1px solid black;
+            width: 48%;
+            height: 98%;
+        }
+        
+        #derecha {
+            border: 1px solid black;
+            float: left;
+            width: 48%;
+            height: 98%;
+            margin-left: 2%;
+        }
+        
+        button {
+            margin-left: 49%;
+        }
+    </style>
+
+    <script>
+        function generarParrafo() {
+
+            var contador = 0;
+
+            if (conatdor % 2 == 0) {
+
+                var seleccionar = document.getElementById("izquierda");
+
+                var crearParrafo = document.createElement("p");
+
+                var texto = document.createTextNode("Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam nobis ab possimus doloremque labore, cumque ducimus officiis nisi nemo. Incidunt impedit, eligendi consequuntur repellendus aliquid autem sed? Suscipit,nisi nobi");
+
+                crearParrafo.appendChild(texto);
+
+                seleccionar.appendChild(crearParrafo);
+
+            } else {
+
+                var seleccionar2 = document.getElementById("derecha");
+
+                var crearParrafo2 = document.createElement("p");
+
+                var texto2 = document.createTextNode("Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam nobis ab possimus doloremque labore, cumque ducimus officiis nisi nemo. Incidunt impedit, eligendi consequuntur repellendus aliquid autem sed? Suscipit,nisi nobi");
+
+                crearParrafo2.appendChild(texto2);
+
+                seleccionar2.appendChild(crearParrafo2);
+
+            }
+            contador++;
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+    <div id="izquierda">
+
+
+
+    </div>
+
+    <div id="derecha">
+
+    </div>
+
+    <button onclick="generarParrafo()">Crear Parrafo </button>
+
+
+</body>
+
+</html>
