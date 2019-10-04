@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @import url("CSS/Cuadros.css");
+    </style>
+
+    <script>
+        function Circular(elemento) {
+            elemento.style.borderRadius = "200px";
+        }
+
+        function Cuadrado(elemento) {
+            elemento.style.borderRadius = "";
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <div id="general">
+
+        <div id="secundario">
+
+            <div id="rojo" class="caja" onmouseover="Circular(this)" onmouseout="Cuadrado(this)">
+
+            </div>
+            <button>Eliminar</button>
+
+        </div>
+
+        <div id="secundario">
+
+            <div id="azul" class="caja" onmouseover="Circular(this)" onmouseout="Cuadrado(this)">
+
+            </div>
+            <button>Eliminar</button>
+
+        </div>
+
+        <div id="secundario">
+
+            <div id="verde" class="caja" onmouseover="Circular(this)" onmouseout="Cuadrado(this)">
+
+            </div>
+            <button>Eliminar</button>
+
+        </div>
+
+        <div id="secundario">
+
+            <div id="negro" class="caja" onmouseover="Circular(this)" onmouseout="Cuadrado(this)">
+
+            </div>
+            <button>Eliminar</button>
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
