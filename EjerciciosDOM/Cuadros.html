@@ -10,43 +10,7 @@
         @import url("CSS/Cuadros.css");
     </style>
 
-    <script>
-        function Circular(elemento) {
-            elemento.style.borderRadius = "200px";
-        }
-
-        function Cuadrado(elemento) {
-            elemento.style.borderRadius = "";
-        }
-
-        function QuitarSombra(elemento){
-
-            elemento.style.boxShadow = "none";
-            elemento.style.transition = "1s";
-        }
-
-        function AnyadirSombra(elemento){
-
-            elemento.style.boxShadow="5px 5px 7px grey";
-            elemento.style.transition = "1s";    
-
-        }
-
-        function SombraDentro(elemento){
-
-            elemento.style.boxShadow ="inset -5px -5px 7px grey";
-            elemento.style.transition = "1s";
-
-        }
-
-        function EliminarContenido(nombreID){
-
-            var cajaEliminar = document.getElementById(nombreID);
-            var padre = cajaEliminar.parentNode;
-            padre.removeChild(cajaEliminar);
-        }
-
-
+    <script src="Cuadros.js">
     </script>
 
 
@@ -57,7 +21,7 @@
 
         <div id="primero" class="secundario">
 
-            <div id="rojo" class="caja" onmouseover="Circular(this)" onmouseout="Cuadrado(this)" onmousedown="QuitarSombra(this)" onmouseup="AnyadirSombra(this)" ondblclick ="SombraDentro(this)">
+            <div id="rojo" class="caja" onmouseover="Circular(this)" onmouseout="Cuadrado(this)" onmousedown="QuitarSombra(this)" onmouseup="AnyadirSombra(this)" ondblclick="SombraDentro(this)">
 
             </div>
             <button onclick="EliminarContenido('primero')">Eliminar</button>
@@ -66,7 +30,7 @@
 
         <div id="segundo" class="secundario">
 
-            <div id="azul" class="caja" onmouseover="Circular(this)" onmouseout="Cuadrado(this)" onmousedown="QuitarSombra(this)" onmouseup="AnyadirSombra(this)" ondblclick ="SombraDentro(this)" >
+            <div id="azul" class="caja" onmouseover="Circular(this)" onmouseout="Cuadrado(this)" onmousedown="QuitarSombra(this)" onmouseup="AnyadirSombra(this)" ondblclick="SombraDentro(this)">
 
             </div>
             <button onclick="EliminarContenido('segundo')">Eliminar</button>
@@ -75,7 +39,7 @@
 
         <div id="tercero" class="secundario">
 
-            <div id="verde" class="caja" onmouseover="Circular(this)" onmouseout="Cuadrado(this)" onmousedown="QuitarSombra(this)" onmouseup="AnyadirSombra(this)" ondblclick="SombraDentro(this)" >
+            <div id="verde" class="caja" onmouseover="Circular(this)" onmouseout="Cuadrado(this)" onmousedown="QuitarSombra(this)" onmouseup="AnyadirSombra(this)" ondblclick="SombraDentro(this)">
 
             </div>
             <button onclick="EliminarContenido('tercero')">Eliminar</button>

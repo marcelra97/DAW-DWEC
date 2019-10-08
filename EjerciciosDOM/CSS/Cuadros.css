@@ -1,20 +1,20 @@
-#general {
-    display: flex;
-    justify-content: space-around;
-}
-
 .secundario {
-    display: flex;
+    float: left;
+    margin: 2%;
+    width: 300px;
+    height: 300px;
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;*/
 }
 
 .caja {
     border: 1px solid black;
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
     box-shadow: 5px 5px 7px grey;
-   
+    transition: border-radius 1s;
+    border-radius: 0px;
 }
 
 #rojo {
@@ -35,4 +35,34 @@
 
 button {
     margin-top: 5%;
+    margin-left: 37%;
+}
+
+.borderRadius {
+    border-radius: 200px;
+    transition: border-radius 1s;
+}
+
+.quitarSombra {
+    box-shadow: none;
+    transition: box-shadow 1s;
+}
+
+.anyadirSombra {
+    box-shadow: 5px 5px 7px grey;
+    transition: box-shadow 1s;
+}
+
+.sombraDentro {
+    box-shadow: inset -5px -5px 7px grey;
+    transition: box-shadow 1s;
+}
+
+.circuloMantenido {
+    border-radius: 200px;
+}
+
+.transicion {
+    width: 0;
+    transition: width 1s;
 }
