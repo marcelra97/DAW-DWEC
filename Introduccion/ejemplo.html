@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        #caja {
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <script>
+        /*
+                window.onload = function() {
+                    document.getElementById("caja").addEventListener("click", ejemplo);
+
+
+                }
+                */
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            document.getElementById("caja").addEventListener("click", ejemplo);
+
+        })
+
+        document.getElementById("caja").addEventListener("click", ejemplo);
+
+        function ejemplo(evento) {
+
+            alert(this.id);
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div id="caja">
+
+
+
+    </div>
+
+</body>
+
+</html>
