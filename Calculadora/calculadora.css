@@ -61,5 +61,7 @@
 }
 
 .sombra {
-    box-shadow: 2px 2px 1px black;
+
+    box-shadow: inset 2px 2px 1px black;
+    
 }
