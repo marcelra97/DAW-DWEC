@@ -1,0 +1,35 @@
+body {
+    display: grid;
+    justify-content: center;
+    grid-template-areas: "header" "tablero";
+}
+
+#titulo {
+    grid-area: header;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#tablero {
+    display: grid;
+    grid-area: tablero;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 2%;
+    width: 700px;
+    height: 600px;
+    background-color: black;
+}
+
+.celda {
+    background-color: #FFC063;
+}
+
+.cruz {
+    background-image: url("img/x.png");
+    background-size: 100% 100%;
+}
+
+.circulo {
+    background-image: url("img/O.png");
+    background-size: 100% 100%;
+}
