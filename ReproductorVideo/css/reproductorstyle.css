@@ -6,7 +6,7 @@ body {
 
 #reproductor {
     display: grid;
-    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-rows: 100px 3fr 1fr;
 }
 
 #barra {
@@ -16,6 +16,11 @@ body {
     grid-gap: 2%;
     margin-bottom: 2%;
     margin-top: 2%;
+    width: 70%;
+    margin-left: 15%;
+    background-color: rgba(63, 62, 62, 0.233);
+    box-shadow: 2px 7px 11px 1px rgba(0, 0, 0, 0.75);
+    border: 1 solid black;
 }
 
 #listavideos {
@@ -29,4 +34,78 @@ body {
     border: 1px solid black;
     margin-right: 25%;
     margin-left: 15%;
+}
+
+.boton {
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    border-radius: 1000px;
+}
+
+#silenciar {
+    background-image: url("../img/muted.png");
+    background-size: 100% 100%;
+}
+
+#retroceder {
+    background-image: url("../img/retroceder.png");
+    background-size: 100% 100%;
+}
+
+#play {
+    background-image: url("../img/play.png");
+    background-size: 100% 100%;
+}
+
+#avanzar {
+    background-image: url("../img/forward.png");
+    background-size: 100% 100%;
+}
+
+#rebobinar {
+    background-image: url("../img/rebobinar.png");
+    background-size: 100% 100%;
+}
+
+#menos {
+    background-image: url("../img/volumenmenos.png");
+    background-size: 100% 100%;
+}
+
+#mas {
+    background-image: url("../img/volumenmas.png");
+    background-size: 100% 100%;
+}
+
+#silenciar:hover {
+    transform: scale(1.1);
+}
+
+#retroceder:hover {
+    transform: scale(1.1);
+}
+
+#retroceder:hover {
+    transform: scale(1.1);
+}
+
+#play:hover {
+    transform: scale(1.1);
+}
+
+#avanzar:hover {
+    transform: scale(1.1);
+}
+
+#rebobinar:hover {
+    transform: scale(1.1);
+}
+
+#menos:hover {
+    transform: scale(1.1);
+}
+
+#mas:hover {
+    transform: scale(1.1);
 }
