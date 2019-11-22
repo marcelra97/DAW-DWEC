@@ -23,15 +23,36 @@ body {
     border: 1 solid black;
 }
 
+#multimedia {
+    position: relative;
+}
+
 #listavideos {
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: space-between;
+    margin-top: 5%;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    bottom: 25%;
+    left: 35%;
+    opacity: 1;
+    background-color: red;
+    border: 1px black solid;
+    border-radius: 50px;
+    box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.75);
+    content: url("../img/publicidad.jpeg");
 }
 
 .videos {
-    border: 1px solid black;
     margin-right: 25%;
     margin-left: 15%;
 }
