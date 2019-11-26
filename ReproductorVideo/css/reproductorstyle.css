@@ -49,7 +49,6 @@ body {
     border: 1px black solid;
     border-radius: 50px;
     box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.75);
-    content: url("../img/publicidad.jpeg");
 }
 
 .videos {
@@ -129,4 +128,10 @@ body {
 
 #mas:hover {
     transform: scale(1.1);
+}
+
+.imagen {
+    content: url("../img/publicidad.jpeg");
+    width: 120px;
+    height: 120px;
 }

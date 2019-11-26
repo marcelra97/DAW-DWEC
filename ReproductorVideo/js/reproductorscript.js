@@ -24,6 +24,7 @@ function apareceBanner() {
     let divBanner = document.querySelector('.banner');
     let p = document.createElement('p');
     let img = document.createElement('div');
+    img.classList.add("imagen");
     p.innerText = "Aqui tienes una rica publicidad de gratis amejo. Disfrutala!";
     divBanner.appendChild(p);
     divBanner.appendChild(img);
