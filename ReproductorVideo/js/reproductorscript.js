@@ -2,11 +2,7 @@ function init() {
 
     video = document.querySelector("video");
 
-    let nodoVideo = document.querySelector("#multimedia");
-    let banner = document.createElement("div");
 
-    banner.classList.add("banner");
-    nodoVideo.appendChild(banner);
 
     document.querySelector("#play").addEventListener('click', play);
     document.querySelector("#silenciar").addEventListener('click', muted);
@@ -15,23 +11,53 @@ function init() {
     document.querySelector("#avanzar").addEventListener('click', avanzar);
     document.querySelector("#menos").addEventListener('click', volumenDown);
     document.querySelector("#mas").addEventListener('click', volumenUp);
-    apareceBanner();
+    crearBanner();
 
+
+    let listavideos = document.querySelectorAll(".videos");
+
+    listavideos.forEach(videos => videos.addEventListener("click", cambiarVideo));
+
+}
+
+function cambiarVideo(e) {
+
+    let videoClickado = e.target;
+
+    let srcSeleccionado = videoClickado.getAttribute("src");
+    let srcActual = video.getAttribute("src");
+
+    video.setAttribute("src", srcSeleccionado);
+
+    videoClickado.setAttribute("src", srcActual);
+
+    video.load();
+    video.play();
+
+    init();
+
+}
+
+function crearBanner() {
+
+    let nodoVideo = document.querySelector("#multimedia");
+    let banner = document.createElement("div");
+
+    banner.classList.add("banner");
+    nodoVideo.appendChild(banner);
+
+    apareceBanner();
 }
 
 function apareceBanner() {
 
     let divBanner = document.querySelector('.banner');
     let p = document.createElement('p');
-    let img = document.createElement('div');
-    img.classList.add("imagen");
     p.innerText = "Aqui tienes una rica publicidad de gratis amejo. Disfrutala!";
     divBanner.appendChild(p);
-    divBanner.appendChild(img);
 
 
-
-    //setTimeout(eliminarBanner, 10000);
+    setTimeout(eliminarBanner, 10000);
 
 }
 

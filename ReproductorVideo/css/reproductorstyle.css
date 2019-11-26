@@ -2,6 +2,7 @@ body {
     display: grid;
     grid-template-columns: 3fr 1fr;
     text-align: center;
+    background-image: url("../img/fondo.jpg");
 }
 
 #reproductor {
@@ -51,9 +52,11 @@ body {
     box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
-.videos {
+.videos:hover {
     margin-right: 25%;
     margin-left: 15%;
+    animation-name: pulsaciones;
+    animation-duration: infinite;
 }
 
 .boton {
@@ -130,8 +133,12 @@ body {
     transform: scale(1.1);
 }
 
-.imagen {
-    content: url("../img/publicidad.jpeg");
-    width: 120px;
-    height: 120px;
+@keyframes pulsaciones {
+    0% {
+        transform: scale(1.1);
+    }
+    50% {}
+    100% {
+        transform: scale(1.1);
+    }
 }
