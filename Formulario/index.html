@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Entrada de acceso </title>
+
+    <style>
+        @import "CSS/estilo_eventoAcceso.css";
+    </style>
+
+    <scrip src="js/formulario.js"></scrip>
+
+</head>
+
+<body>
+
+
+
+
+    <form>
+
+        <h2>Formulario Total</h2>
+
+        <label>Nombre:</label>
+        <input type="text" name="nombre" size="70" onblur="comprobarNombre(this)"><br>
+
+        <label>Apellidos:</label>
+        <input type="text" name="apellidos" size="70" onblur="comprobarApellidos(this)"><br>
+
+        <label>e-mail:</label>
+        <input type="text" name="email" size="70" onblur="comprobarEmail(this)"><br>
+
+        <label>DNI:</label>
+        <input type="text" name="dni" size="70" onblur="comprobarDNI(this)"><br>
+
+        <label>Password:</label>
+        <input type="password" name="password" size="70" onblur="comprobarPassword(this)"><br>
+
+        <label>Repetir Password:</label>
+        <input type="password" name="passwordRepetida" size="70" onblur="passwordCorrecta(this, password.value)"><br>
+
+        <label>IP Equipo:</label>
+        <input type="text" name="ip" size="70" onblur="comprobarIp(this)"><br>
+
+
+        <button onclick="validarFormulario()">Enviar</button>
+
+    </form>
+
+
+
+
+
+</body>
+
+</html>

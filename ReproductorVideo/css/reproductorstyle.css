@@ -55,8 +55,7 @@ body {
 .videos:hover {
     margin-right: 25%;
     margin-left: 15%;
-    animation-name: pulsaciones;
-    animation-duration: infinite;
+    transform: scale(1.2);
 }
 
 .boton {
@@ -131,14 +130,4 @@ body {
 
 #mas:hover {
     transform: scale(1.1);
-}
-
-@keyframes pulsaciones {
-    0% {
-        transform: scale(1.1);
-    }
-    50% {}
-    100% {
-        transform: scale(1.1);
-    }
 }
