@@ -8,16 +8,14 @@
     <title>Entrada de acceso </title>
 
     <style>
-        @import "CSS/estilo_eventoAcceso.css";
+        @import "css/estilo_eventoAcceso.css";
     </style>
 
-    <scrip src="js/formulario.js"></scrip>
+    <script src="js/formulario.js"></script>
 
 </head>
 
 <body>
-
-
 
 
     <form>
@@ -25,28 +23,28 @@
         <h2>Formulario Total</h2>
 
         <label>Nombre:</label>
-        <input type="text" name="nombre" size="70" onblur="comprobarNombre(this)"><br>
+        <input type="text" name="nombre" size="70"><br>
 
         <label>Apellidos:</label>
-        <input type="text" name="apellidos" size="70" onblur="comprobarApellidos(this)"><br>
+        <input type="text" name="apellidos" size="70"><br>
 
         <label>e-mail:</label>
-        <input type="text" name="email" size="70" onblur="comprobarEmail(this)"><br>
+        <input type="text" name="email" size="70"><br>
 
         <label>DNI:</label>
-        <input type="text" name="dni" size="70" onblur="comprobarDNI(this)"><br>
+        <input type="text" name="dni" size="70"><br>
 
         <label>Password:</label>
-        <input type="password" name="password" size="70" onblur="comprobarPassword(this)"><br>
+        <input type="password" name="password" size="70"><br>
 
         <label>Repetir Password:</label>
-        <input type="password" name="passwordRepetida" size="70" onblur="passwordCorrecta(this, password.value)"><br>
+        <input type="password" name="passwordRepetida" size="70"><br>
 
         <label>IP Equipo:</label>
-        <input type="text" name="ip" size="70" onblur="comprobarIp(this)"><br>
+        <input type="text" name="ip" size="70"><br>
 
 
-        <button onclick="validarFormulario()">Enviar</button>
+        <button>Enviar</button>
 
     </form>
 
