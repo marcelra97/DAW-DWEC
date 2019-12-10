@@ -1,5 +1,10 @@
     //Array para comprobar que todo el formulario esta escrito correctamente
     var comprobarFormulario = new Array;
+    let nombre;
+    let apellidos;
+    let email;
+    let dni;
+    let password;
 
     function init() {
 
@@ -17,79 +22,82 @@
 
     function comprobarNombre() {
 
-        var comprobarNombre = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
+        // var comprobarNombre = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
 
-        // se comprueba que el this sea valido
-        if (comprobarNombre.test(this.value)) {
-            //no es error
-            comprobarFormulario[0] = true;
+        // // se comprueba que el this sea valido
+        // if (comprobarNombre.test(this.value)) {
+        //     //no es error
+        //     comprobarFormulario[0] = true;
 
 
-        } else {
+        // } else {
 
-            //es error
-            comprobarFormulario[0] = false;
-            this.value = "Error";
-        }
+        //     //es error
+        //     comprobarFormulario[0] = false;
+        //     this.value = "Error";
+        // }
 
-        console.log(comprobarFormulario);
+        // console.log(comprobarFormulario);
+        nombre = this.value;
 
 
     }
 
     function comprobarApellidos() {
 
-        var comprobarApellidos = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
+        // var comprobarApellidos = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
 
-        if (comprobarApellidos.test(this.value)) {
-            //no es error
-            comprobarFormulario[1] = true;
+        // if (comprobarApellidos.test(this.value)) {
+        //     //no es error
+        //     comprobarFormulario[1] = true;
 
-        } else {
-            // es error
-            comprobarFormulario[1] = false;
-            this.value = "Error";
-        }
-        console.log(comprobarFormulario);
-
+        // } else {
+        //     // es error
+        //     comprobarFormulario[1] = false;
+        //     this.value = "Error";
+        // }
+        // console.log(comprobarFormulario);
+        apellidos = this.value;
     }
 
     function comprobarEmail() {
 
-        var comprobarEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+        // var comprobarEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
-        if (comprobarEmail.test(this.value)) {
+        // if (comprobarEmail.test(this.value)) {
 
-            //no es erro
-            comprobarFormulario[2] = true;
+        //     //no es erro
+        //     comprobarFormulario[2] = true;
 
-        } else {
+        // } else {
 
-            //es error
-            comprobarFormulario[2] = false;
-            this.value = "Error";
+        //     //es error
+        //     comprobarFormulario[2] = false;
+        //     this.value = "Error";
 
-        }
-        console.log(comprobarFormulario);
+        // }
+        // console.log(comprobarFormulario);
+        email = this.value;
 
     }
 
     function comprobarDNI() {
 
-        var comprobarDNI = /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/i;
+        // var comprobarDNI = /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/i;
 
-        if (comprobarDNI.test(this.value)) {
+        // if (comprobarDNI.test(this.value)) {
 
-            //no es error
-            comprobarFormulario[3] = true;
+        //     //no es error
+        //     comprobarFormulario[3] = true;
 
-        } else {
+        // } else {
 
-            //es error
-            comprobarFormulario[3] = false;
-            this.value = "Error";
-        }
-        console.log(comprobarFormulario);
+        //     //es error
+        //     comprobarFormulario[3] = false;
+        //     this.value = "Error";
+        // }
+        // console.log(comprobarFormulario);
+        dni = this.value;
 
 
     }
@@ -104,22 +112,22 @@
         //no hay espacios en blanco
         //al menos un caracter especial
         password = this.value;
-        var comprobarPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+        // var comprobarPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
 
-        if (comprobarPassword.test(this.value)) {
+        // if (comprobarPassword.test(this.value)) {
 
-            //no es error
-            comprobarFormulario[4] = true;
+        //     //no es error
+        //     comprobarFormulario[4] = true;
 
-        } else {
+        // } else {
 
-            //es error 
-            comprobarFormulario[4] = false;
-            this.value = "Error";
+        //     //es error 
+        //     comprobarFormulario[4] = false;
+        //     this.value = "Error";
 
-        }
+        // }
 
-        console.log(comprobarFormulario);
+        // console.log(comprobarFormulario);
 
     }
 
@@ -127,37 +135,37 @@
     function passwordCorrecta() {
 
 
-        if (password == this.value) {
+        // if (password == this.value) {
 
-            comprobarFormulario[5] = true;
+        //     comprobarFormulario[5] = true;
 
-        } else {
+        // } else {
 
-            comprobarFormulario[5] = false;
-            this.value = "Error";
-        }
+        //     comprobarFormulario[5] = false;
+        //     this.value = "Error";
+        // }
 
-        console.log(comprobarFormulario);
+        // console.log(comprobarFormulario);
 
     }
 
     function comprobarIp() {
 
-        var comprobarIp = /^([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3})$/;
+        // var comprobarIp = /^([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3})$/;
 
-        if (comprobarIp.test(this.value)) {
+        // if (comprobarIp.test(this.value)) {
 
-            //no es error
-            comprobarFormulario[6] = true;
+        //     //no es error
+        //     comprobarFormulario[6] = true;
 
-        } else {
+        // } else {
 
-            //es error
-            comprobarFormulario[6] = false;
-            this.value = "Error";
+        //     //es error
+        //     comprobarFormulario[6] = false;
+        //     this.value = "Error";
 
-        }
-        console.log(comprobarFormulario);
+        // }
+        // console.log(comprobarFormulario);
     }
 
     //validar el formulario al darle enviarswor
@@ -172,8 +180,6 @@
             comprobarCorrecto++;
 
         }
-
-        console.log(comprobarCorrecto);
 
         if (comprobarCorrecto == 7) {
 
@@ -197,40 +203,23 @@
 
     function consultar() {
 
-        ruta = 'http://localhost/formulario.php?' +
-            'nombre=' + dato[0] + ' ';
-        metodo = "GET";
-        envio = null;
-        xml = true;
+        let fomrulario = new FormData();
 
-        descargar(metodo, ruta, envio, xml, tratarXML);
+        formulario = rellenarFormulario(formulario);
+
     }
 
-    function descargar(metodo, ruta, envio, xml, funcion) {
-        // Obtener la instancia del objeto XMLHttpRequest
-        let peticion_http = new XMLHttpRequest();
+    function rellenarFormulario(formulario) {
 
-        if (xml) peticion_http.overrideMimeType('text/xml');
-        // Preparar la función de respuesta
-        peticion_http.onreadystatechange = mostrar;
-        // Realizar petición HTTP
-        peticion_http.open(metodo, ruta, true);
-        peticion_http.send(envio);
+        formulario.append('nombre', nombre);
+        formulario.append('apellidos', apellidos);
+        formulario.append('dni', dni);
+        formulario.append('password', password);
+        formulario.append('nombre', nombre);
+        formulario.append('nombre', nombre);
+        formulario.append('nombre', nombre);
+        formulario.append('nombre', nombre);
 
-        function mostrar() {
-            if (peticion_http.readyState == 4 && peticion_http.status == 200) {
-
-                if (xml) funcion(peticion_http.responseXML);
-
-                else funcion(peticion_http.responseText);
-            }
-        }
     }
 
-    let password;
-    let ruta;
-    let metodo;
-    let envio;
-    let xml;
-    let dato;
     window.onload = init;
