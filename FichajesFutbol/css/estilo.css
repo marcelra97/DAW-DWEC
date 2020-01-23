@@ -1,0 +1,26 @@
+body{
+
+display: flex;
+flex-direction: row;
+
+}
+
+#campo{
+    background-image: url("../img/campo.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 800px;
+    height: 750px;
+}
+
+#banquillo{
+
+    height: 700px;
+    width: 500px;
+    border: 1px solid black;
+
+}
+
+h1{
+    margin-left: 30%;
+}
