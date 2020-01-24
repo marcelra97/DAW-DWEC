@@ -30,3 +30,29 @@ h1{
     width: 90px;
     height: 90px;
 }
+
+.porteria{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.defensa{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.centro{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.delantero{
+    display: flex;
+    flex-direction: row;
+}
