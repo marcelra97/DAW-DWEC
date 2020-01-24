@@ -1,10 +1,30 @@
 function init() {
 
-    document.querySelectorAll(".juagador").addEventListener("dragover", allowDrop);
-    document.querySelectorAll(".banca").addEventListener("dragover", allowDrop);
-    document.getElementById("drag1").addEventListener("dragstart", drag);
-    document.getElementById("div2").addEventListener("drop",drop);
-    document.getElementById("div1").addEventListener("drop",drop);
+    // .addEventListener("dragover", allowDrop);
+    let jugadores = document.querySelectorAll(".jugador");
+    let contador = 0;
+
+    jugadores.forEach(jugador => {
+
+        contador++;
+        crearImgs(jugador, contador);
+        jugador.addEventListener('dragover', allowDrop);
+        
+    })
+    // document.querySelectorAll(".banca").addEventListener("dragover", allowDrop);
+    // document.getElementById("drag1").addEventListener("dragstart", drag);
+    // document.getElementById("div2").addEventListener("drop",drop);
+    // document.getElementById("div1").addEventListener("drop",drop);
+
+}
+
+function crearImgs(divJugador, id){
+
+    let img = document.createElement("img");
+    img.setAttribute("src","img/futbolista.png");
+    img.setAttribute("id", id);
+
+    divJugador.appendChild(img);
 
 }
     
@@ -35,4 +55,5 @@ function drop(ev) {
     
 }
 
-   window.onload = init;
+
+window.onload = init;
