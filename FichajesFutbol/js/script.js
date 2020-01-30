@@ -1,33 +1,31 @@
 function init() {
 
-    // .addEventListener("dragover", allowDrop);
+    // campo
     let jugadores = document.querySelectorAll(".jugador");
-    let contador = 0;
 
     jugadores.forEach(jugador => {
 
-        contador++;
-        crearImgs(jugador, contador);
-        jugador.addEventListener('dragover', allowDrop);
-        
+        jugador.addEventListener("dragover", allowDrop);
+        jugador.addEventListener("drop",drop);
+
+        //el dragstart solamente lo necesitas para añadirselo al elemento que quieres darle el drag no a la caja que lo contiene
+        jugador.firstElementChild.addEventListener('dragstart', drag);
+
     })
-    // document.querySelectorAll(".banca").addEventListener("dragover", allowDrop);
-    // document.getElementById("drag1").addEventListener("dragstart", drag);
-    // document.getElementById("div2").addEventListener("drop",drop);
-    // document.getElementById("div1").addEventListener("drop",drop);
-
-}
-
-function crearImgs(divJugador, id){
-
-    let img = document.createElement("img");
-    img.setAttribute("src","img/futbolista.png");
-    img.setAttribute("id", id);
-
-    divJugador.appendChild(img);
-
-}
     
+    //banquillo
+    let banquillo = document.querySelectorAll(".banca");
+
+    banquillo.forEach(banca => {
+
+        banca.addEventListener("dragover", allowDrop);
+        banca.addEventListener("drop",drop);
+       
+    })
+
+}
+
+
 function allowDrop(ev) {
     
     //Permitir que reciba algún elemento
@@ -50,8 +48,11 @@ function drop(ev) {
     //Guardamos el elemento, llamado "text" en una variable.
     var data = ev.dataTransfer.getData("text");
     
-    //Colgamos el elemeto arrastrado y soltado en el nuevo destino.
-    ev.target.appendChild(document.getElementById(data));
+      //Colgamos el elemeto arrastrado y soltado en el nuevo destino.
+      //Si esa caja ya tiene un elemento no se podra soltar ahi  
+      if(!ev.target.draggable){
+        ev.target.appendChild(document.getElementById(data));
+    }
     
 }
 
