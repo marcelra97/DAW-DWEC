@@ -11,7 +11,7 @@ function init() {
 
     })
     .then(datos =>{
-
+        
         //aqui tengo un array de los datos
         //console.log(datos);
 
@@ -20,20 +20,7 @@ function init() {
     })
 
     eventosBanquillo();
-    // // campo
-    // let jugadores = document.querySelectorAll(".jugador");
-
-    // jugadores.forEach(jugador => {
-
-    //     jugador.addEventListener("dragover", allowDrop);
-    //     jugador.addEventListener("drop",drop);
-
-    //     //el dragstart solamente lo necesitas para añadirselo al elemento que quieres darle el drag no a la caja que lo contiene
-    //     jugador.firstElementChild.addEventListener('dragstart', drag);
-
-    // })
-
-    //
+    
 }
 
 function eventosBanquillo() {
@@ -54,7 +41,7 @@ function crearDivsJugadores(datosJSon) {
     // me coje todos los divs de cada posicion
     datosJSon.forEach(jugador => {
 
-        let divPosicion = document.getElementById(jugador[2]);
+        let divPosicion = document.getElementById(jugador.posicion);
 
         /**********DIVJUGADOR*************/
         //me creo el div jugador y la imagen
@@ -69,14 +56,15 @@ function crearDivsJugadores(datosJSon) {
 
         /************IMAGEN*************/
         let imagen = document.createElement("img");
+         //le añado el id para luego hacer el drag and drop
+        imagen.setAttribute("id", jugador._idjugador);
         //le añado la ruta de la imagen
-        imagen.setAttribute("src", "img/"+jugador[3]);
-        //le añado el id para luego hacer el drag and drop
-        imagen.setAttribute("id", jugador[0]);
-
+        imagen.setAttribute("src", "img/"+jugador.imagen);
+        imagen.setAttribute("data-posicion", jugador.posicion);
+       
         /********EVENTOS IMAGEN***********/
         //el evento drag es para los elementos que vas a coger no para sus cajas
-        imagen.addEventListener("drag", drag);
+        imagen.addEventListener("dragstart", drag);
 
 
 
@@ -95,17 +83,19 @@ function allowDrop(ev) {
 }
 
 function drag(ev) {
-
+    
     //Indicamos que valor y tipo de información vamos a arrastrar. En este caso texto e ID del elemento.
     ev.dataTransfer.setData("text", ev.target.id);
+    
 
 }
 
 function drop(ev) {
 
+    
     //Evitamos el comportamiento normal del navegador, que sería abrir el elemento en una nueva pestaña.
     ev.preventDefault();
-
+    
     //Guardamos el elemento, llamado "text" en una variable.
     var data = ev.dataTransfer.getData("text");
     
@@ -114,9 +104,29 @@ function drop(ev) {
       if(!ev.target.draggable){
           
         ev.target.appendChild(document.getElementById(data));
-    }
+      }
+    
+    modificaBD(ev.target.firstChild);
 
 }
 
+function modificaBD(futbolista){
+    
+    //los data son para guardar datos como atributo, que luego necesites
+    
+
+    let url = "../controlador/modificaBD.php";
+    let data = new FormData();
+
+     data.append("posicion", "reserva")
+     data.append("id", futbolista.id)            
+                
+    
+    fetch(url, {
+        method: 'POST',
+        body: data, // data can be `string` or {object}!
+    })
+ 
+}
 
 window.onload = init;

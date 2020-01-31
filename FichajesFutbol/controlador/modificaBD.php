@@ -5,8 +5,12 @@ $username = "user";
 $password = "user";
 $basedatos = "futbol";
 
+$posicion = $_POST["posicion"];
+$id = $_POST["id"];
+
 # Crear conexión
 $conn = mysqli_connect($servidor, $username, $password, $basedatos);
+
 
 # Comprobar conexión
 if (!$conn) {
@@ -14,15 +18,11 @@ if (!$conn) {
 }
 
 #Se crea la consulta
-$consulta = "SELECT * FROM futbolistas";
+$consulta = "UPDATE futbolistas  SET posicion = '".$posicion."' WHERE _idjugador = ".$id." ";
 $resultado = mysqli_query($conn,$consulta);
 
-#me guardo el resultado y lo parseo a json, el resultado tambien me lo pueden pasar como texto
-$fila = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
-$parseado = json_encode($fila);
 
-#hay que hacer un echo despues del parseado para que el ajax pueda recogerlo, sino saltara el error
-echo $parseado;
+
 mysqli_close($conn);
                         
 
