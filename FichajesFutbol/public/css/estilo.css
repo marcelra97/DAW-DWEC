@@ -44,7 +44,7 @@ img {
     height: 90px;
 }
 
-.porteria{
+#portero{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -53,7 +53,7 @@ img {
 }
 
 
-.defensa{
+#defensa{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -63,7 +63,7 @@ img {
 
 
 
-.centro{
+#centro{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -71,9 +71,7 @@ img {
     margin-bottom: 5%;
 }
 
-
-
-.delantero{
+#delantero{
     display: flex;
     flex-direction: row;
     justify-content: center;
