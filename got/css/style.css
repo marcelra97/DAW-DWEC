@@ -1,158 +1,140 @@
-a,
-button {
-    width: 100px;
-    margin: 5px;
+a, button {
+    width:100px;
+    margin:5px;
 }
-
 select {
     -webkit-appearance: none;
 }
-
 .titular {
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
-    float: none;
+    font-weight:bold;
+    font-size:30px;
+    text-align:center;
+    float:none;
 }
-
 .botonera {
-    text-align: center;
+    text-align:center;
     float: none;
 }
-
 div {
-    float: left;
-    margin: 3px;
+	float:left;
+	margin:3px;
 }
-
 .datos {
-    width: calc(100% - 200px);
+	width:calc(100% - 200px);
 }
-
 .foto {
-    width: 150px;
-    height: 200px;
+	width:150px;
+    height:200px;
+    
 }
-
 img {
-    width: 150px;
-    height: 200px;
-    box-shadow: 2px 2px 2px silver;
     float: left;
+	width:150px;
+	height:200px;
+    box-shadow:2px 2px 2px silver;
+    
 }
-
 .cabecera {
-    background-color: silver;
-    font-weight: bold;
-    height: 25px;
-    padding: 2px;
+	background-color:silver;
+	font-weight:bold;
+	height:25px;
+	padding:2px;
 }
-
 .dato {
-    font-style: italic;
-    height: 30px;
-    padding-left: 2px;
+	font-style:italic;
+	height:30px;
+	padding-left:2px;
 }
-
 .small {
-    width: 32%;
+	width:32%;
 }
-
 .medium {
-    width: 65%;
+	width:65%;
 }
-
 .big {
-    width: 98%;
+	width:98%;
 }
-
 .titulo {
-    width: 100px;
-    font-weight: bold;
+	width:100px;
+	font-weight:bold;
 }
-
 .caja {
-    width: 160px;
+	width:160px;
 }
-
 #contenedorFichas {
-    float: none;
+	float:none;
 }
-
 #contenedorForm {
-    float: none;
-    height: 200px;
-    width: 350px;
+	float:none;
+	height:200px;
+    width:350px;
 }
 
 .cajaTexto {
-    border: 1px black solid;
-    padding: 2px;
-    width: 200px;
+	border:1px black solid;
+	padding:2px;
+	width:200px;
 }
-
 .ficha {
-    float: none;
-    width: 100%;
+	float:none;
+	width:100%;
 }
-
 #contenedorFotos {
-    position: absolute;
-    width: 700px;
-    left: 50%;
-    margin-left: -350px;
+    position:absolute;
+    width:700px;
+    left:50%;
+    margin-left:-350px;
 }
-
 .contenedorJuego {
-    margin: 0;
-    padding: 2px;
-    text-align: center;
+    margin:0;
+    padding:2px;
+    text-align:center;
 }
-
 .contenedorSelect {
-    text-align: center;
-    width: 100%;
+    text-align:center;
+    width:100%;
 }
-
 .contenedorComprobar {
-    width: 100%;
-    text-align: center;
-    float: none;
-    margin-bottom: 15px;
+    width:100%;
+    text-align:center;
+    float:none;
+    margin-bottom:15px;
 }
-
 .error {
-    border: 1px solid red;
-    float: left;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: red;
-    visibility: hidden;
+    border:1px solid red;
+    float:left;
+    padding-left:10px;
+    padding-right:10px;
+    color:red;
+    visibility:hidden;
 }
-
+.vacia{
+    border:1px solid red;
+}
 @media (max-width: 726px) {
     #contenedorFotos {
-        margin: 0;
-        left: 0;
-        width: 100%;
+        margin:0;
+        left:0;
+        width:100%;
     }
     .small {
-        width: 33%;
+        width:33%;
     }
     .medium {
-        width: 60%;
+        width:60%;
     }
     .big {
-        width: calc(94% + 5px);
+        width:calc(94% + 5px);
     }
     .datos {
-        width: calc(100% - 165px);
-        padding: 0;
+        width:calc(100% - 165px);
+        padding:0;
     }
     .dato {
-        font-size: 12px;
+        font-size:12px;
     }
     .cabecera {
-        font-size: 14px;
+        font-size:14px;
     }
 }
+
